@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #ff1493, #4682b4); /* Thicker vivid pink-blue gradient */
+            color: #333;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #800080; /* Purple color */
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            color: white;
+        }
+
+        .sidebar img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            margin-top: 20px;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        .content {
+            margin-left: 220px;
+            width: calc(100% - 220px);
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        section {
+            display: none;
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start; /* Align cards horizontally to the left */
+            align-items: center;        /* Vertically center the cards */
+            height: 100vh;              /* Full viewport height for centering */
+        }
+
+        /* Card Layout for All Sections */
+        .card {
+            background: linear-gradient(50deg, yellow, orange); /* Yellow-orange gradient */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 60%; /* Adjusted to align to center-left */
+            max-width: 600px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: white;
+            text-align: left; /* Align text to left */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Project Card Layout */
+        .project-container {
+            position: relative; /* To allow absolute positioning of the cards inside it */
+            width: 100%; /* Full width */
+            height: 60vh; /* Full viewport height */
+        }
+
+        .project-card {
+            width: 35%;
+	    border: 1px solid #css;
+            background: linear-gradient(50deg, yellow, orange);
+            border-radius: 10px;
+            padding: 20px;
+	    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            margin: 0; /* Remove margin, positioning will control placement */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="img.jpg" alt="Profile Picture">
+        <h2>I'm Likhitha</h2>
+        <nav>
+            <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
+            <a href="javascript:void(0)" onclick="showSection('about')">About Me</a>
+            <a href="javascript:void(0)" onclick="showSection('education')">Education</a>
+            <a href="javascript:void(0)" onclick="showSection('skills')">Skills</a>
+            <a href="javascript:void(0)" onclick="showSection('certifications')">Certifications</a>
+            <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+            <a href="javascript:void(0)" onclick="showSection('experience')">Experience</a>
+            <a href="javascript:void(0)" onclick="showSection('languages')">Languages</a>
+            <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+        </nav>
+    </div>
+
+    <div class="content">
+
+        <section id="about">
+            <div class="card">
+                <h2>About Me</h2>
+                <p>As an aspiring tech professional currently pursuing a BTech in Computer Science and Engineering with a focus on AI and ML. I aim to secure a position where I can continuously learn and effectively showcase my technical skills, contributing to both the company's success and my personal growth.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="card">
+                <h2>Graduation </h2>
+		<p>B.Tech(AI&ML)</p>
+                <p>MRECW</p>
+                <p>2022-2026</p>
+		<h2>Senior Secondary</h2>
+		<p>Government Junior College</p>
+		<p>2020-2022</p>
+		<p>89.7</p>
+		<h2>Secondary</h2>
+		<p>St.Ann's E/M High School</p>
+		<p>2019-2020</p>
+		<p>100</P>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="card">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Programming Languages: Python, Java, C++</li>
+                    <li>Web Technologies: HTML, CSS, JavaScript</li>
+                    <li>AI/ML: TensorFlow, Scikit-learn</li>
+                    <li>Databases: MySQL, MongoDB</li>
+                    <li>Tools: Git, Docker, Kubernetes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="card">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Certified Python Programmer - XYZ Institute</li>
+                    <li>Machine Learning Specialization - Coursera</li>
+                    <li>AI for Everyone - Coursera</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="project-container">
+                <div class="project-card" style="position: absolute; top: 20px; left: 20px;">
+                    <h3>Fall Detection System Using ML</h3>
+                    <p>A system designed for elderly safety by detecting falls using machine learning algorithms.</p>
+                </div>
+                <div class="project-card" style="position: absolute; bottom: 20px; right: 20px;">
+                    <h3>AI-Powered Smart Home Energy Management</h3>
+                    <p>Built an AI system to optimize energy usage with predictive analytics and renewable integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="card">
+                <h2>Experience</h2>
+                <p>Internship at XYZ Company - Software Development Intern</p>
+                <p>June 2024 - August 2024</p>
+                <p>Worked on developing web applications and improving backend systems using Python and Django.</p>
+            </div>
+        </section>
+
+        <section id="languages">
+            <div class="card">
+                <h2>Languages</h2>
+                <ul>
+                    <li>English: Fluent</li>
+                    <li>Hindi: Fluent</li>
+                    <li>Telugu: Native</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="card">
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:goudicharlalikhitha@gmail.com">goudicharlalikhitha@gmail.com</a></p>
+                <p>Phone: <a href="tel:9390710164">9390710164</a></p>
+                <p>Location: Hyderabad, Telangana</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            const section = document.getElementById(sectionId);
+            if (section) section.style.display = 'flex';
+        }
+
+        showSection('about'); /* Default section */
+    </script>
+</body>
+</html>
